@@ -1,0 +1,347 @@
+
+Output:
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+****Action starts****
+****Cache entry begins******
+****Cache entry ends******
+****Note! cache was empty****
+*********************************Country Table*********************************
+ Accessing DB service to test GET METHOD  
+Country Table- Accessing DB service get method first time 
+ I hit DB  getCountryTableData for id1
+Country [countryId=1, countryCd=A, countryName=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+ I hit DB  getCountryTableData for id2
+Country [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+ I hit DB  getCountryTableData for id3
+Country [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+ I hit DB  getCountryTableData for id4
+Country [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+
+
+
+Country Data- Accessing DB service get method  second time 
+Country [countryId=1, countryCd=A, countryName=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Country [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Country [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Country [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+No DB hit !!!!
+
+
+
+ Accessing DB service to UPDATE  
+I hit DB  to updateCountry for id1
+Cache entries after UPDATE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CountryTableDataService, 4]
+Cache Entry valueCountry [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Cache Entry key[class cache.staticData.CountryTableDataService, 2]
+Cache Entry valueCountry [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.CountryTableDataService, 3]
+Cache Entry valueCountry [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after UPDATE ************
+Country [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Country [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Country [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Country [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to INSERT  
+hit addCountry for id5
+Cache entries after INSERT 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CountryTableDataService, 4]
+Cache Entry valueCountry [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 2]
+Cache Entry valueCountry [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.CountryTableDataService, 3]
+Cache Entry valueCountry [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after INSERT ************
+Country [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Country [countryId=2, countryCd=B, countryName=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Country [countryId=3, countryCd=C, countryName=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Country [countryId=4, countryCd=D, countryName=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Country [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to Delete
+I hit DB to deleteCountry for id2
+I hit DB to deleteCountry for id3
+I hit DB to deleteCountry for id4
+Cache entries after DELETE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after delete ************
+Country [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Country [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+****************Currency Table***************************
+ Accessing DB service to test GET METHOD  
+Currency Table- Accessing DB service get method first time 
+hit getCurrencyTableData for id1
+Currency [currencyId=1, currencyCd=A, currencyName=A, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+hit getCurrencyTableData for id2
+Currency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+hit getCurrencyTableData for id3
+Currency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+hit getCurrencyTableData for id4
+Currency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+
+
+
+Currency Data- Accessing DB service get method  second time 
+Currency [currencyId=1, currencyCd=A, currencyName=A, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Currency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Currency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Currency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+No DB hit !!!!
+
+
+
+ Accessing DB service to UPDATE  
+hit updateCurrency for id1
+Cache entries after UPDATE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 2]
+Cache Entry valueCurrency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 3]
+Cache Entry valueCurrency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 4]
+Cache Entry valueCurrency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after UPDATE ************
+Currency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Currency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Currency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Currency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to INSERT  
+hit addCurrency for id5
+Cache entries after INSERT 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 2]
+Cache Entry valueCurrency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 3]
+Cache Entry valueCurrency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 4]
+Cache Entry valueCurrency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after INSERT ************
+Currency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Currency [currencyId=2, currencyCd=B, currencyName=B, currencySymbol=B, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Currency [currencyId=3, currencyCd=C, currencyName=C, currencySymbol=C, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Currency [currencyId=4, currencyCd=D, currencyName=D, currencySymbol=D, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Currency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to Delete
+hit deleteCurrency for id2
+hit deleteCurrency for id3
+hit deleteCurrency for id4
+Cache entries after DELETE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after delete ************
+Currency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Currency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+****************Holiday Table***************************
+ Accessing DB service to test GET METHOD  
+Holiday Table- Accessing DB service get method first time 
+hit getHolidayTableData for id1
+Holiday [holidayId=1, holidayCd=A, holidayName=A, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+hit getHolidayTableData for id2
+Holiday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+hit getHolidayTableData for id3
+Holiday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+hit getHolidayTableData for id4
+Holiday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+
+
+
+Holiday Data- Accessing DB service get method  second time 
+Holiday [holidayId=1, holidayCd=A, holidayName=A, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Holiday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Holiday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Holiday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+No DB hit !!!!
+
+
+
+ Accessing DB service to UPDATE  
+hit updateHoliday for id1
+Cache entries after UPDATE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 3]
+Cache Entry valueHoliday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 2]
+Cache Entry valueHoliday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 1]
+Cache Entry valueHoliday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 4]
+Cache Entry valueHoliday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after UPDATE ************
+Holiday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Holiday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Holiday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Holiday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to INSERT  
+hit addHoliday for id5
+Cache entries after INSERT 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 3]
+Cache Entry valueHoliday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 2]
+Cache Entry valueHoliday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 1]
+Cache Entry valueHoliday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 5]
+Cache Entry valueHoliday [holidayId=5, holidayCd=new, holidayName=new, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 4]
+Cache Entry valueHoliday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after INSERT ************
+Holiday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Holiday [holidayId=2, holidayCd=B, holidayName=B, holidayDt=2017-02-14, StatusInd=2, lastModifiedDt=2017-02-14, modifyPersonNum=2]
+Holiday [holidayId=3, holidayCd=C, holidayName=C, holidayDt=2017-02-14, StatusInd=3, lastModifiedDt=2017-02-14, modifyPersonNum=3]
+Holiday [holidayId=4, holidayCd=D, holidayName=D, holidayDt=2017-02-14, StatusInd=4, lastModifiedDt=2017-02-14, modifyPersonNum=4]
+Holiday [holidayId=5, holidayCd=new, holidayName=new, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+
+
+
+ Accessing DB service to Delete
+hit deleteHoliday for id2
+hit deleteHoliday for id3
+hit deleteHoliday for id4
+Cache entries after DELETE 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 1]
+Cache Entry valueHoliday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 5]
+Cache Entry valueHoliday [holidayId=5, holidayCd=new, holidayName=new, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+
+
+
+******** invoke get method of DB service after delete ************
+Holiday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Holiday [holidayId=5, holidayCd=new, holidayName=new, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Note ....No DB hit !!!! as Cache is also updated 
+****Cache entry begins******
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 1]
+Cache Entry valueCurrency [currencyId=1, currencyCd=A, currencyName=Achanged, currencySymbol=A, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 1]
+Cache Entry valueHoliday [holidayId=1, holidayCd=A, holidayName=Achanged, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 5]
+Cache Entry valueCountry [countryId=5, countryCd=new, countryName=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CurrencyTableDataService, 5]
+Cache Entry valueCurrency [currencyId=5, currencyCd=new, currencyName=new, currencySymbol=new, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.HolidayTableDataService, 5]
+Cache Entry valueHoliday [holidayId=5, holidayCd=new, holidayName=new, holidayDt=2017-02-14, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+Cache Entry key[class cache.staticData.CountryTableDataService, 1]
+Cache Entry valueCountry [countryId=1, countryCd=A, countryName=Achanged, StatusInd=1, lastModifiedDt=2017-02-14, modifyPersonNum=1]
+****Cache entry ends******
+****Action ends****
+
+
